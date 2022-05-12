@@ -1,4 +1,3 @@
-from random import seed
 from random import randint
 
 class Director:
@@ -11,8 +10,9 @@ class Director:
         self.higher_lower = ''
 
     def get_input(self):
-        
-        print(f"The card is: {self.cards.first_card}")
+        self.cards.first_card = self.cards.get_card()
+        self.cards.second_card = self.cards.get_card()
+        print(f"\nThe card is: {self.cards.first_card}")
         self.higher_lower = input("Higher or Lower? [H or L] ")
 
         while (self.cards.first_card == self.cards.second_card):
@@ -54,7 +54,6 @@ class Cards:
         self.second_card = randint(1,13)
     
     def get_card(self):
-        seed(0)
         return randint(1,13)
 
 
