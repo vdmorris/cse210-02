@@ -50,8 +50,8 @@ class Director:
 class Cards:
     
     def __init__(self):
-        self.first_card = 0
-        self.second_card = 0
+        self.first_card = randint(1,13)
+        self.second_card = randint(1,13)
     
     def get_card(self):
         seed(0)
