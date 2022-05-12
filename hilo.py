@@ -2,31 +2,30 @@ from random import seed
 from random import randint
 
 class Director:
-    #
-    def __init__(self):
-        
-        self.player_score = 300
-        self.win_round = ''
-        self.continue_playing = ''
-    
-    def get_card_info(self):
-        ''
-    
-    def evaulate_cards_values(self):
-        ''
-    
-    def update_score(self):
-        ''
-    
-    def prompt_repeat(self):
 
+    def get_input():
+        cards = Cards
+        higher_lower = " "
+        first_card = cards.get_card()
+        second_card = cards.get_card()
+        
+        print(f"The card is: {first_card}")
+        higher_lower = input("Higher or Lower? [H or L] ")
+
+        while (first_card == second_card):
+            return second_card
+        
+        print(f"The next card is: {second_card}")
+
+    
+    def update_score():
+        ''
+    
+    def prompt_repeat():
+        ''
 
 class Cards:
 
-    def __init__(self):
-        pass
-        self.first_card = 0
-        self.second_card = 0
     
     def get_card():
         card = randint(1,14)
