@@ -27,11 +27,16 @@ class Cards:
     def flip_first_card(self):
         ''
     
+<<<<<<< HEAD
     def flip_second_card(self):
+=======
+    def get_card(self):
+>>>>>>> 211144ca85acbb4238637dbcd8639538324d3cfa
         ''
 
 
 ''' DESIGN
+<<<<<<< HEAD
 class: Card
     Responsibility: To hold card values
         first_card: int
@@ -40,10 +45,29 @@ class: Card
         flip_first_card(): int
         flip_second_card(): int
 class: Director
+=======
+
+class: Card
+
+    Responsibility: To hold card values
+        first_card: int
+        second_card: int
+
+    Behaviors: To get new card values
+        flip_first_card(): int
+        flip_second_card(): int
+
+class: Director
+
+>>>>>>> 211144ca85acbb4238637dbcd8639538324d3cfa
     Responsibility: To hold player score, win of round, and value of continue play
         player_score: int
         win_round: bool
         continue_playing: bool
+<<<<<<< HEAD
+=======
+
+>>>>>>> 211144ca85acbb4238637dbcd8639538324d3cfa
     Beaviors: To evaluate card values, update score,
                 and prompt for continued play
         
