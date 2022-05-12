@@ -23,6 +23,7 @@ class Director:
         print(f"The next card is: {Director.cards.second_card}")
         Director.update_score(Director.higher_lower, Director.cards.first_card, Director.cards.second_card)
         print(f"Your score is: {Director.player_score}")
+        Director.continue_playing()
 
     
     def update_score(self, higher_lower, card1, card2):
@@ -41,7 +42,7 @@ class Director:
 
     
     def prompt_continue_playing(self):
-        ' '
+        Director.continue_playing = input("Would you like to play again? [Y or N] ")
 
 class Cards:
 
