@@ -2,23 +2,53 @@ class Director:
     #
     def __init__(self):
         card = self.Cards
+        self.player_score = 300
+        self.win_round = ''
+        self.continue_playing = ''
     
-    def get_input(self):
+    def get_card_info(self):
         ''
     
-    def update(self):
+    def evaulate_cards_values(self):
         ''
     
-    def do_output(self):
+    def update_score(self):
         ''
     
-    def start_game(self):
+    def prompt_continue_playing(self):
         ''
 
 class Cards:
 
     def __init__(self):
+        self.first_card = ''
+        self.second_card = 0
+    
+    def flip_first_card(self):
         ''
     
-    def get_card(self):
+    def flip_second_card(self):
         ''
+
+
+''' DESIGN
+class: Card
+    Responsibility: To hold card values
+        first_card: int
+        second_card: int
+    Behaviors: To get new card values
+        flip_first_card(): int
+        flip_second_card(): int
+class: Director
+    Responsibility: To hold player score, win of round, and value of continue play
+        player_score: int
+        win_round: bool
+        continue_playing: bool
+    Beaviors: To evaluate card values, update score,
+                and prompt for continued play
+        
+        get_card_info(): int first_card, int second_card
+        evaulate_cards_values(): int first_card, int second_card, bool win_round
+        update_score(): int score, bool win_round
+        prompt_continue_playing(): bool continue_playing
+'''
