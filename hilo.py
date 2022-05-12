@@ -21,13 +21,27 @@ class Director:
             Director.cards.second_card = Director.cards.get_card()
         
         print(f"The next card is: {Director.cards.second_card}")
+        Director.update_score(Director.higher_lower, Director.cards.first_card, Director.cards.second_card)
+        print(f"Your score is: {Director.player_score}")
 
     
-    def update_score(self):
-        ''
+    def update_score(self, higher_lower, card1, card2):
+        if (higher_lower.lower() == "l"):
+            if (card1 > card2):
+                Director.player_score += 100
+            else: 
+                Director.player_score -= 75
+        elif (higher_lower.lower() == "h"):
+            if (card1 < card2):
+                Director.player_score += 100
+            else: 
+                Director.player_score -= 75
+        else:
+            print("Invalid guess!!!")
+
     
     def prompt_continue_playing(self):
-        ''
+        ' '
 
 class Cards:
 
