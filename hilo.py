@@ -7,25 +7,25 @@ class Director:
         self.player_score = 300
         self.win_round = ''
         self.continue_playing = True
-        self.cards = self.Cards()
+        self.cards = Cards()
         self.higher_lower = ''
 
     def get_input(self):
         
-        print(f"The card is: {self.cards.fist_cards}")
+        print(f"The card is: {self.cards.first_card}")
         self.higher_lower = input("Higher or Lower? [H or L] ")
 
-        while (self.cards.fist_cards == self.cards.second_card):
+        while (self.cards.first_card == self.cards.second_card):
             self.cards.second_card = self.cards.get_card()
         
         print(f"The next card is: {self.cards.second_card}")
-        self.update_score(self.higher_lower, self.cards.fist_cards, self.cards.second_card)
+        self.update_score(self.higher_lower, self.cards.first_card, self.cards.second_card)
         print(f"Your score is: {self.player_score}")
         self.prompt_continue_playing()
 
     
     def update_score(self, higher_lower, card1, card2):
-        if (self.higher_lower.lower() == "l"):
+        if (higher_lower.lower() == "l"):
             if (card1 > card2):
                 self.player_score += 100
             else: 
@@ -43,6 +43,7 @@ class Director:
         if play.lower() == 'n':
             print ("Thanks for playing!")
             self.continue_playing == False
+            quit()
 
         
 
@@ -57,7 +58,7 @@ class Cards:
 
 
 def main():
-    director = Director
+    director = Director()
     while (director.continue_playing):
         
         director.get_input()
