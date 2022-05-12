@@ -4,16 +4,24 @@ from random import randint
 class Director:
     #
     def __init__(self):
-        card = self.Cards
         self.player_score = 300
         self.win_round = ''
         self.continue_playing = ''
-    
-    def get_card_info(self):
-        ''
-    
-    def evaulate_cards_values(self):
-        ''
+        self.cards = self.Cards()
+        self.higher_lower = ''
+
+    def get_input(self):
+        Director.cards.first_card = Director.cards.get_card()
+        Director.cards.second_card = Director.cards.get_card()
+        
+        print(f"The card is: {Director.cards.first_card}")
+        Director.higher_lower = input("Higher or Lower? [H or L] ")
+
+        while (Director.cards.first_card == Director.cards.second_card):
+            Director.cards.second_card = Director.cards.get_card()
+        
+        print(f"The next card is: {Director.cards.second_card}")
+
     
     def update_score(self):
         ''
@@ -24,7 +32,6 @@ class Director:
 class Cards:
 
     def __init__(self):
-        pass
         self.first_card = 0
         self.second_card = 0
     
