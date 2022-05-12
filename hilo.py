@@ -54,7 +54,8 @@ class Cards:
         self.second_card = 0
     
     def get_card(self):
-        return randint(1,14)
+        seed(0)
+        return randint(1,13)
 
 
 def main():
